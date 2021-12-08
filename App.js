@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView } from 'react-native';
-import Search from './SearchBar.js';
+import Livelocation from './components/Livelocation';
+// import Search from './SearchBar.js';
 
 export default function App() {
   return (
@@ -8,7 +9,8 @@ export default function App() {
       <View>
         <Text style={styles.text}>Weather APP</Text>  
       </View>
-      <Search />
+      <Livelocation />
+      {/* <Search /> */}
     </SafeAreaView> 
   );
 }

@@ -1,11 +1,39 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React, { useState, useEffect } from 'react';
+import { Platform, Text, View, StyleSheet } from 'react-native';
 import * as Location from 'expo-location';
 
-export default function livelocation() {
+export default function Livelocation() {
+    const [errorMsg, setErrorMsg] = useState(null);
+    const [latitude, setLat] = useState(null);
+    const [longitude, setLong] = useState(null);
+  
+    useEffect(() => {
+      (async () => {
+        let { status } = await Location.requestForegroundPermissionsAsync();
+        if (status !== 'granted') {
+          setErrorMsg('Permission to access location was denied');
+          return{
+          };
+        }
+  
+        let location = await Location.getCurrentPositionAsync({});
+        const {latitude, longitude} = location.coords
+        setLat(latitude);
+        setLong(longitude);
+      })();
+    }, []);
+
+
+    if(errorMsg){
+        return(
+        <Text>errorMsg</Text>
+        )
+    } else {
     return (
-        <View>
-            <Text></Text>
-        </View>
+      <View >
+        <Text>latitude: {latitude}</Text>
+        <Text>longitude: {longitude}</Text>
+      </View>
     )
-}
+    }
+  }
