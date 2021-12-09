@@ -32,10 +32,16 @@ export default function Livelocation() {
     } else {
     return (
       <View >
-        <Text>latitude: {latitude}</Text>
-        <Text>longitude: {longitude}</Text>
+        <Text style={styles.text}>latitude: {latitude}</Text>
+        <Text style={styles.text}>longitude: {longitude}</Text>
         <Weather lat={latitude} long={longitude} />
       </View>
     )
     }
   }
+
+  const styles = StyleSheet.create({
+    text: {
+        textAlign:'center'
+    }
+  });

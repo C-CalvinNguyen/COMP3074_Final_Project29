@@ -1,12 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView } from 'react-native';
 import Livelocation from './components/livelocation';
+
 // import Search from './SearchBar.js';
 
 export default function App() {
+
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
+    <SafeAreaView >
+      <View style={styles.container, {marginTop:10}}>
         <Text style={styles.text}>Weather APP</Text>  
       </View>
       <Livelocation />
@@ -17,12 +20,13 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
+    flex: 2,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    fontSize: 20
+    fontSize: 20,
+    textAlign:'center'
   }
 });
