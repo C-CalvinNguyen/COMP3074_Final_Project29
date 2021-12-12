@@ -1,28 +1,30 @@
 import React from 'react';
 import { StyleSheet, Text, View , SafeAreaView } from 'react-native';
-import Livelocation from './components/Livelocation';
-// import Search from './SearchBar.js';
+import Livelocation from './components/livelocation';
+
 
 export default function App() {
+
+
   return (
-    <SafeAreaView style={styles.container}>
-      <View>
+    <SafeAreaView >
+      <View style={styles.container, {marginTop:10}}>
         <Text style={styles.text}>Weather APP</Text>  
       </View>
       <Livelocation />
-      {/* <Search /> */}
     </SafeAreaView> 
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 0,
-    backgroundColor: '#fff',
+    flex: 2,
+    backgroundColor: '#00d4ff',
     alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
-    fontSize: 20
+    fontSize: 20,
+    textAlign:'center'
   }
 });
